@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./js/v2.6.10/vue.js"></script> -->
+	<script src="https://cdn.staticfile.net/vue/2.6.10/vue.min.js"></script><!-- 注意之前使用的Vue版本 -->
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .tbs{
+            width:600px;
+            border: 1px solid #999;
+        }
+        .tabsHander{
+            height: 39px;
+            display: flex;
+            border-bottom: 1px solid #999;
+            border-bottom-color: #fff;
+        }
+        .tab{
+            width: 100px;
+            height: 40px;
+            text-align: center;
+            line-height: 40px;
+            border: 1px solid #999;
+            
+        }
+        .active{
+            border-bottom: none;
+        }
+        .tabsBody{
+            height: 200px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app" >
+        <div class="tbs">
+           <div class="tabsHander">
+               <div class="tab" 
+               :class="{active:active == item}"
+               v-for="(item,index) in tabTitleList"
+               :key="index"
+               @click="tableClick(item)"
+               >
+                  {{index}}{{ item }}
+               </div>
+           </div> 
+           <div class="tabsBody">
+               {{active}}新闻
+           </div>
+       </div>
+    </div>
+    <script>
+        let app = new Vue({//实例化vue对象
+            el:'#app',//挂载元素  唯一的根元素
+            data:{
+                active:'热点',//数据项
+                tabTitleList:['热点','娱乐','财经','游戏','影视','美食']
+            },
+            methods:{
+                tableClick(key){
+                    this.active = key
+                }
+            }
+        })
+    </script>
+</body>
+</html>
