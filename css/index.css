@@ -18,6 +18,14 @@
 		color: #fff;
 		
 	}
+	.box1f{
+		width: auto;
+		height: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		
+	}
 	
 	.box1{
 		display: flex;
@@ -30,12 +38,16 @@
 		width: 420px;
 		height: 180px;
 		position: sticky;		
-		transform: translate(-50%,-50%);
+		/* transform: translate(-50%,-50%);
 		top: 50%;
-		left:50%;
+		left:50%; */
 	}
-	.conter1{
+	.text1{
 		position: sticky;
-		
 		text-align: center;
+	}
+	.video1{
+		border: 1px solid rgba(255, 255,255, 1);
+		background-color: rgba(255, 255, 255,0);
+		border-radius: 15px;
 	}

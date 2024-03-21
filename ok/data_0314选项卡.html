@@ -11,9 +11,19 @@
             margin: 0;
             padding: 0;
         }
+		#app{
+			display: flex;
+			width: 100vw;
+			height: 100vh;
+			align-items: center;
+			justify-content: center;
+		}
         .tbs{
             width:600px;
-            border: 1px solid #999;
+            border: 1px solid #999;			
+			
+			
+			
         }
         .tabsHander{
             height: 39px;
@@ -22,11 +32,13 @@
             border-bottom-color: #fff;
         }
         .tab{
-            width: 100px;
+            width: auto;
+			flex: 1	;
             height: 40px;
             text-align: center;
-            line-height: 40px;
+            line-height: 40px;			
             border: 1px solid #999;
+			
             
         }
         .active{
@@ -35,6 +47,9 @@
         .tabsBody{
             height: 200px;
             padding: 10px;
+			
+			 
+			 
         }
     </style>
 </head>
@@ -48,7 +63,7 @@
                :key="index"
                @click="tableClick(item)"
                >
-                  {{index}}{{ item }}
+                  {{ item }}
                </div>
            </div> 
            <div class="tabsBody">
